@@ -1,0 +1,26 @@
+@keyframes neonglow {
+    0% {
+        color: var(--font-color-faded);
+        text-shadow: 0;
+    }
+    60% {
+        color: var(--font-color);
+        text-shadow: #FFF 0 0 10px, #228DFF 0 0 30px ;
+    }
+    63% {
+        color: var(--font-color-faded);
+        text-shadow: 0;
+    }
+    66% {
+        color: var(--font-color);
+        text-shadow: #FFF 0 0 10px, #228DFF 0 0 30px;
+    }
+    69% {
+        color: var(--font-color-faded);
+        text-shadow: 0;
+    }
+    100% {
+        color: var(--font-color);
+        text-shadow: #FFF 0 0 10px, #228DFF 0 0 30px;
+    }
+}

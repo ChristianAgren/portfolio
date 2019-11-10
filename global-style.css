@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #0B1316;
+    --secondary-color: #153D4D;
+    --font-color: #edf0f0;
+    --font-color-faded: #edf0f0cb;
+    font-size: 1rem;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
+    color: var(--font-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid {
+    display: grid;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: repeat(1fr);
+    row-gap: 1rem;
+    grid-template-areas: 
+    ". . . . ."
+    ". hero hero hero ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ;
+}
+
+.hero {
+    grid-area: hero;
+    justify-self: center;
+
+    text-align: center;
+}
+
+
+.hero-title {
+    font-weight: 200;
+    text-shadow:var(--font-color-faded) 1px 1px 5px, var(--secondary-color) 0 0 10px;
+}
+
+.neon-text-animation {
+    animation: neonglow 3s ease-in-out infinite alternate
+}
+
+.hero-description {
+    font-weight: 300;
+    line-height: 1.2rem;
+}
+
+.faded-text {
+    color: var(--font-color-faded);
+}
