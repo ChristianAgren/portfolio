@@ -1,3 +1,8 @@
+
+/* -------------------------- */
+/* ----- GENERAL-STYLES ----- */
+/* -------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,24 +11,35 @@
 :root {
     --primary-color: #0B1316;
     --secondary-color: #153D4D;
-    --font-color: #edf0f0;
-    --font-color-faded: #edf0f0cb;
+    --offwhite: #edf0f0;
+    --offwhite-faded: #edf0f0cb;
     font-size: 1rem;
 }
 
 body {
+    position: relative;
+    
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(var(--primary-color), var(--secondary-color));
-    color: var(--font-color);
+    color: var(--offwhite);
     width: 100vw;
     height: 100vh;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* --------------------------- */
+/* ------- CONTAINERS -------- */
+/* --------------------------- */
+
 .grid {
+    position: absolute;
     display: grid;
 }
 
-.container {
+.hero-container {
     width: 100%;
     height: 100%;
 
@@ -40,28 +56,75 @@ body {
     ;
 }
 
+.planet-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* -------------------------- */
+/* --------- ITEMS ---------- */
+/* -------------------------- */
+
 .hero {
     grid-area: hero;
     justify-self: center;
 
     text-align: center;
+    opacity: 0;
 }
 
+.planet {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, 5%);
+
+    width: 50vw;
+    height: 50vw;
+    min-width: 50rem;
+    min-height: 50rem;
+    border-radius: 50%;
+    border: .27rem solid #2f6078;
+    box-shadow: inset .5rem .5rem .4rem rgba(0, 0, 0, 0.25), 0 0 2rem #327a9e;
+
+    background-color: var(--offwhite);
+}
+
+.track {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+
+    width: 55vw;
+    height:55vw;
+    min-width: 55rem;
+    min-height: 55rem;
+    border-radius: 50%;
+    border: .3rem dotted var(--offwhite-faded)
+}
 
 .hero-title {
     font-weight: 200;
-    text-shadow:var(--font-color-faded) 1px 1px 5px, var(--secondary-color) 0 0 10px;
+    text-shadow:var(--offwhite-faded) 1px 1px 5px, var(--secondary-color) 0 0 3rem;
 }
 
 .neon-text-animation {
     animation: neonglow 3s ease-in-out infinite alternate
 }
 
+.fade-in-animation {
+    animation: fadein 1.5s ease-in .6s forwards
+}
+
 .hero-description {
+    margin-top: .14rem;
+
     font-weight: 300;
-    line-height: 1.2rem;
+    line-height: 1.43rem;
 }
 
 .faded-text {
-    color: var(--font-color-faded);
+    color: var(--offwhite-faded);
 }
