@@ -30,16 +30,21 @@ body {
     overflow: hidden;
 }
 
+.faded-text {
+    color: var(--offwhite-faded);
+}
+
 /* --------------------------- */
 /* ------- CONTAINERS -------- */
 /* --------------------------- */
 
 .grid {
-    position: absolute;
     display: grid;
 }
 
 .hero-container {
+    position: absolute;
+
     width: 100%;
     height: 100%;
 
@@ -95,20 +100,30 @@ body {
     position: absolute;
     top: 59%;
     left: 50%;
-    transform: translate(-50%, -5%);
 
     width: 55vw;
     height:55vw;
     min-width: 55rem;
     min-height: 55rem;
     border-radius: 50%;
-    border: .3rem dotted var(--offwhite-faded)
+    border: .3rem dotted var(--offwhite-faded);
 }
 
 .hero-title {
     font-weight: 200;
     text-shadow:var(--offwhite-faded) 1px 1px 5px, var(--secondary-color) 0 0 3rem;
 }
+
+.hero-description {
+    margin-top: .14rem;
+    
+    font-weight: 300;
+    line-height: 1.43rem;
+}
+
+/* -------------------------- */
+/* ------ ANIMATIONS -------- */
+/* -------------------------- */
 
 .neon-text-animation {
     animation: neonglow 3s ease-in-out infinite alternate
@@ -118,13 +133,6 @@ body {
     animation: fadein 1.5s ease-in .6s forwards
 }
 
-.hero-description {
-    margin-top: .14rem;
-
-    font-weight: 300;
-    line-height: 1.43rem;
-}
-
-.faded-text {
-    color: var(--offwhite-faded);
+.spin-animation {
+    animation: spin 240s linear reverse infinite
 }
