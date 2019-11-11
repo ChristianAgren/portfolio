@@ -11,6 +11,8 @@
 :root {
     --primary-color: #0B1316;
     --secondary-color: #153D4D;
+    --planet-color: rgb(0, 32, 90);
+    --planet-color-dark: rgb(0, 24, 70);
     --offwhite: #edf0f0;
     --offwhite-faded: #edf0f0cb;
     font-size: 1rem;
@@ -24,6 +26,15 @@ body {
     color: var(--offwhite);
     width: 100vw;
     height: 100vh;
+}
+
+.sphere-shape {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
 }
 
 .overflow-hidden {
@@ -80,20 +91,31 @@ body {
 }
 
 .planet {
-    position: absolute;
-    top: 59%;
-    left: 50%;
-    transform: translate(-50%, 5%);
-
     width: 50vw;
     height: 50vw;
     min-width: 50rem;
     min-height: 50rem;
-    border-radius: 50%;
     border: .27rem solid #2f6078;
     box-shadow: inset .5rem .5rem .4rem rgba(0, 0, 0, 0.25), 0 0 2rem #327a9e;
 
-    background-color: var(--offwhite);
+    background: radial-gradient(var(--planet-color-dark) var(--planet-color));
+}
+
+.land {
+    margin-top: 3rem;
+
+    width: 300%;
+    height: 80%;
+    background: url(./res/earth-vector-bright.svg) 0 0 repeat / 50%;
+}
+
+.atmosphere {
+    width: 52vw;
+    height: 52vw;
+    min-width: 53rem;
+    min-height: 53rem;
+
+    background: url(./res/clouds-vector.svg) 0 0 repeat / 100%
 }
 
 .track {
@@ -107,6 +129,7 @@ body {
     min-height: 55rem;
     border-radius: 50%;
     border: .3rem dotted var(--offwhite-faded);
+    opacity: 0;
 }
 
 .hero-title {
@@ -134,5 +157,9 @@ body {
 }
 
 .spin-animation {
-    animation: spin 240s linear reverse infinite
+    animation: spin 180s linear reverse infinite, fadein 1.5s ease-in 1s forwards
+}
+
+.first-land-animation {
+    animation: firstbrowse 240s linear infinite
 }

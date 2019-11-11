@@ -26,3 +26,12 @@
         transform: translateX(-50%) translateY(-5%) rotate(360deg);
     }
 }
+
+@keyframes firstbrowse {
+    0% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(-60%);
+    }
+}
