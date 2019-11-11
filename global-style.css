@@ -30,7 +30,6 @@ body {
 
 .sphere-shape {
     position: absolute;
-    top: 59%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -91,6 +90,8 @@ body {
 }
 
 .planet {
+    top: 59%;
+
     width: 50vw;
     height: 50vw;
     min-width: 50rem;
@@ -110,17 +111,33 @@ body {
 }
 
 .atmosphere {
+    top: 58%;
+
     width: 52vw;
     height: 52vw;
     min-width: 53rem;
     min-height: 53rem;
 
-    background: url(./res/clouds-vector.svg) 0 0 repeat / 100%
+    background: url(./res/clouds-vector.svg) 0 0 repeat / 100%;
+    opacity: .6;
+}
+
+.orbit {
+    position: absolute;
+    z-index: 1;
+    top: 57%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5%);
+
+    width: 55vw;
+    height: 55vw;
+    min-height: 55rem;
+    min-width: 55rem;
 }
 
 .track {
     position: absolute;
-    top: 59%;
+    top: 57%;
     left: 50%;
 
     width: 55vw;
@@ -130,6 +147,17 @@ body {
     border-radius: 50%;
     border: .3rem dotted var(--offwhite-faded);
     opacity: 0;
+}
+
+.ship {
+    position: absolute;
+    top: -27px;
+    left:50%;
+    transform: translateX(-50%) translateY(-5%);
+
+    width: 12rem;
+    height: 3.7rem;
+    background: url(./res/spaceship.svg) no-repeat center;
 }
 
 .hero-title {
