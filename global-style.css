@@ -25,6 +25,7 @@ body {
     background: linear-gradient(var(--primary-color), var(--secondary-color));
     color: var(--offwhite);
     width: 100vw;
+    min-height: -webkit-fill-available;
     height: 100vh;
 }
 
