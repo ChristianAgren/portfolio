@@ -133,6 +133,7 @@ body {
     height: 55vw;
     min-height: 55rem;
     min-width: 55rem;
+    opacity: 0;
 }
 
 .track {
@@ -163,6 +164,7 @@ body {
 .ship::after {
     position: absolute;
     top: 1.3rem;
+    
     width: 100%;
     height: 100%;
 
@@ -199,10 +201,14 @@ body {
 }
 
 .wobble-animation {
-    animation: wobble 6s ease-in-out alternate infinite
+    animation: wobble 8s ease-in-out alternate infinite
+}
+
+.phasein-animation {
+    animation: phasein 2s ease-out 1s forwards, fadein 1s ease-in 1s forwards
 }
 
 .spin-animation {
-    animation: spin 180s linear reverse infinite, fadein 1.5s ease-in 1s forwards
+    animation: spin 180s linear reverse infinite, fadein 1.5s ease-in 3s forwards
 }
 

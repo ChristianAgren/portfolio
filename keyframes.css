@@ -45,6 +45,15 @@
     }
 }
 
+@keyframes phasein {
+    0% {
+        transform: rotate(-60deg) translateX(-55%) translateY(-55%);
+    }
+    100% {
+        transform: rotate(0deg) translateX(-50%) translateY(-5%);
+    }
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
