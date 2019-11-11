@@ -137,27 +137,37 @@ body {
 
 .track {
     position: absolute;
-    top: 57%;
-    left: 50%;
 
     width: 55vw;
     height:55vw;
     min-width: 55rem;
     min-height: 55rem;
     border-radius: 50%;
-    border: .3rem dotted var(--offwhite-faded);
+    border: .3rem dotted #edf0f036;
     opacity: 0;
 }
 
+
 .ship {
     position: absolute;
-    top: -27px;
+    z-index: 1;
+    top: -2.7rem;
     left:50%;
     transform: translateX(-50%) translateY(-5%);
+    
+    width: 14rem;
+    height: 6rem;
+    background: url(./res/spaceship-dark.svg) no-repeat center;
+}
 
-    width: 12rem;
-    height: 3.7rem;
-    background: url(./res/spaceship.svg) no-repeat center;
+.ship::after {
+    position: absolute;
+    top: 1.3rem;
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(#327a9e6b 5%, rgba(255, 255, 255, 0) 68%) ;
+    content: "";
 }
 
 .hero-title {
@@ -176,18 +186,23 @@ body {
 /* ------ ANIMATIONS -------- */
 /* -------------------------- */
 
+.fade-in-animation {
+    animation: fadein 1.5s ease-in .6s forwards
+}
+
 .neon-text-animation {
     animation: neonglow 3s ease-in-out infinite alternate
 }
 
-.fade-in-animation {
-    animation: fadein 1.5s ease-in .6s forwards
+.rotate-land-animation {
+    animation: rotate 240s linear infinite
+}
+
+.wobble-animation {
+    animation: wobble 6s ease-in-out alternate infinite
 }
 
 .spin-animation {
     animation: spin 180s linear reverse infinite, fadein 1.5s ease-in 1s forwards
 }
 
-.first-land-animation {
-    animation: firstbrowse 240s linear infinite
-}
