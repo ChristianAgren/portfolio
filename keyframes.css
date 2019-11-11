@@ -29,19 +29,19 @@
 
 @keyframes wobble {
     0% {
-        top: -2.8em;
+        top: -3.2em;
     }
     20% {
-        top: -2.55em;
+        top: -2.9em;
     }
     60% {
-        top: -2.55em;
+        top: -2.9em;
     }
     80% {
-        top: -2.8em;
+        top: -3.2em;
     }
     100% {
-        top: -2.8em;
+        top: -3.2em;
     }
 }
 

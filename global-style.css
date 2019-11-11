@@ -28,6 +28,10 @@ body {
     height: 100vh;
 }
 
+.material-icons {
+    font-size: 36px;
+}
+
 .sphere-shape {
     position: absolute;
     left: 50%;
@@ -44,6 +48,14 @@ body {
     color: var(--offwhite-faded);
 }
 
+.center-text {
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* --------------------------- */
 /* ------- CONTAINERS -------- */
 /* --------------------------- */
@@ -54,19 +66,21 @@ body {
 
 .hero-container {
     position: absolute;
-
+    z-index: 1;
+    
     width: 100%;
     height: 100%;
-
-    grid-template-columns: repeat(1fr);
-    grid-template-rows: repeat(1fr);
-    row-gap: 1rem;
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .1fr .3fr 1.8fr .1fr .2fr .1fr .2fr;
+    row-gap: .2rem;
     grid-template-areas: 
     ". . . . ."
     ". hero hero hero ."
     ". . . . ."
-    ". . . . ."
-    ". . . . ."
+    ". . desc-title . ."
+    ". desc-bdytxt desc-bdytxt desc-bdytxt ."
+    ". . key-down . ."
     ". . . . ."
     ;
 }
@@ -84,27 +98,46 @@ body {
 .hero {
     grid-area: hero;
     justify-self: center;
-
+    
     text-align: center;
     opacity: 0;
 }
 
+.description-title {
+    grid-area: desc-title;
+
+    height: 100%;
+    
+    text-shadow: var(--secondary-color) 3px 3px 3px;
+}
+
+.description-bodytext {
+    grid-area: desc-bdytxt;
+
+    height: 100%;
+}
+
+.arrow-down {
+    grid-area: key-down;
+}
+
+
 .planet {
     top: 59%;
-
+    
     width: 50vw;
     height: 50vw;
     min-width: 50rem;
     min-height: 50rem;
     border: .27rem solid #2f6078;
     box-shadow: inset .5rem .5rem .4rem rgba(0, 0, 0, 0.25), 0 0 2rem #327a9e;
-
+    
     background: radial-gradient(var(--planet-color-dark) var(--planet-color));
 }
 
 .land {
     margin-top: 3rem;
-
+    
     width: 300%;
     height: 80%;
     background: url(./res/earth-vector-bright.svg) 0 0 repeat / 50%;
@@ -112,12 +145,12 @@ body {
 
 .atmosphere {
     top: 58%;
-
+    
     width: 52vw;
     height: 52vw;
     min-width: 53rem;
     min-height: 53rem;
-
+    
     background: url(./res/clouds-vector.svg) 0 0 repeat / 100%;
     opacity: .6;
 }
@@ -128,21 +161,21 @@ body {
     top: 57%;
     left: 50%;
     transform: translateX(-50%) translateY(-5%);
-
+    
     width: 55vw;
     height: 55vw;
-    min-height: 55rem;
-    min-width: 55rem;
+    min-height: 70rem;
+    min-width: 70rem;
     opacity: 0;
 }
 
 .track {
     position: absolute;
-
+    
     width: 55vw;
     height:55vw;
-    min-width: 55rem;
-    min-height: 55rem;
+    min-width: 70rem;
+    min-height: 70rem;
     border-radius: 50%;
     border: .3rem dotted #edf0f036;
     opacity: 0;
@@ -167,7 +200,7 @@ body {
     
     width: 100%;
     height: 100%;
-
+    
     background: radial-gradient(#327a9e6b 5%, rgba(255, 255, 255, 0) 68%) ;
     content: "";
 }
@@ -177,11 +210,15 @@ body {
     text-shadow:var(--offwhite-faded) 1px 1px 5px, var(--secondary-color) 0 0 3rem;
 }
 
-.hero-description {
+.hero-subtitle {
     margin-top: .14rem;
     
     font-weight: 300;
     line-height: 1.43rem;
+}
+
+.description p {
+    line-height: 1.42rem;
 }
 
 /* -------------------------- */
