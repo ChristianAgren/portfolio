@@ -72,8 +72,20 @@ body {
 
 .parallax_group {
     position: relative;
-    transform-style: preserve-3d;
+    /* transform-style: preserve-3d; */
     height: 100vh;
+}
+
+.top-layer {
+    z-index: 3;
+}
+
+.middle-layer {
+    z-index: 2;
+}
+
+.bot-layer {
+    z-index: 1;
 }
 
 .parallax_layer {
