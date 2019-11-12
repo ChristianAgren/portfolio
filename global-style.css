@@ -65,15 +65,15 @@ body {
 
 .parallax {
     perspective: 20px;
-    height: 100vh;
+    height: 100%;
     overflow-x: hidden ;
     overflow-y: auto;
 }
 
 .parallax_group {
     position: relative;
-    /* transform-style: preserve-3d; */
-    height: 100vh;
+    transform-style: preserve-3d;
+    height: 100%;
 }
 
 .top-layer {
