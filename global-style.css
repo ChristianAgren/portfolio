@@ -78,6 +78,7 @@ p {
 
 .parallax {
     perspective: 20px;
+    -webkit-perspective: 20px;
     height: 100%;
     overflow-x: hidden ;
     overflow-y: auto;
