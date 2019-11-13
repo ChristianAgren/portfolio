@@ -1,7 +1,5 @@
 
-/* -------------------------- */
-/* ----- GENERAL-STYLES ----- */
-/* -------------------------- */
+/* ---- GLOBAL-STYLES ---- */
 
 * {
     margin: 0;
@@ -11,216 +9,208 @@
 :root {
     --primary-color: #0B1316;
     --secondary-color: #153D4D;
-    --planet-color: rgb(0, 32, 90);
-    --planet-color-dark: rgb(0, 24, 70);
+    /* --planet-color: rgb(0, 32, 90);
+    --planet-color-dark: rgb(0, 24, 70); */
     --offwhite: #edf0f0;
     --offwhite-faded: #edf0f0cb;
-    font-size: 1rem;
-}
-
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    position: relative;
-    -moz-perspective: 0;
-    -webkit-perspective: 0;
-    perspective: 0;
-    
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(var(--primary-color), var(--secondary-color));
-    color: var(--offwhite);
-}
-
-p {
-    max-width: 25rem;
 }
 
 .material-icons {
     font-size: 36px;
 }
 
+body {
+    position: relative;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--offwhite);
+}
+
+h1 {
+    line-height: 1.46rem;
+    font-weight: 200;
+}
+
+h4 {
+    line-height: 3.42rem;
+    font-weight: 300;
+}
+
+h2, i {
+    text-shadow: var(--secondary-color) 3px 3px 3px;
+}
+
+/* ---- OOCSS ---- */
+
+.grid {
+    margin:0 0 10rem 0;
+
+    height: 95vh;
+
+    display: grid;
+}
+
+.center_text {
+    text-align: center;
+}
+
 .sphere-shape {
     position: absolute;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
 
     border-radius: 50%;
 }
 
-.overflow-hidden {
-    overflow: hidden;
-}
+/* ---- CONTAINERS ---- */
 
-.faded-text {
-    color: var(--offwhite-faded);
-}
+.hero_container {
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.flex-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.center-text {
-    text-align: center;
-
-    align-items: center;
-    justify-content: center;
-}
-
-/* --------------------------- */
-/* -------- PARALLAX --------- */
-/* --------------------------- */
-
-.parallax {
-
-    height: 100%;
-    overflow-x: hidden ;
-    overflow-y: auto;
-}
-
-.parallax_group {
-    position: relative;
-    -moz-transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    height: 100%;
-}
-
-.top-layer {
-    z-index: 3;
-}
-
-.middle-layer {
-    z-index: 2;
-}
-
-.bot-layer {
-    z-index: 1;
-}
-
-.parallax_layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.parallax_layer-content {
-    -moz-transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    z-index: 1;
-}
-.parallax_layer-back {
-  -moz-transform: translateZ(-50px) scale(1);
-  -webkit-transform: translateZ(-50px) scale(1);
-  transform: translateZ(-50px) scale(1);
-}
-
-/* --------------------------- */
-/* ------- CONTAINERS -------- */
-/* --------------------------- */
-
-
-.grid {
-    display: grid;
-}
-
-.hero-container {
-    position: absolute;
-    
-    width: 100%;
-    height: 94%;
-    
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: .4fr .2fr 1.5fr .1fr .1fr .2fr .2fr;
     row-gap: .2rem;
     grid-template-areas: 
     ". . . . ."
     ". hero hero hero ."
     ". . . . ."
-    ". . desc-title . ."
-    ". desc-bdytxt desc-bdytxt desc-bdytxt ."
-    ". . key-down . ."
+    ". . title . ."
+    ". bdytxt bdytxt bdytxt ."
+    ". . endicon . ."
     ". . . . ."
     ;
 }
 
-.about-container {
-    width: 100%;
-    height: 94%;
+.about_container {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(5, 1fr) ;
+    row-gap: .2rem;
+    grid-template-areas: 
+    ". . ."
+    ". title ."
+    ". . ."
+    ". abtdesc ."
+    ". endicon ."
+    ;
 }
 
-.planet-container {
-    position: absolute;
-    top: -130%;
-    width: 100%;
-    height: 290%;
+.projects_container {
+
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(5, 1fr) ;
+    row-gap: .2rem;
+    grid-template-areas: 
+    ". . ."
+    ". title ."
+    ". . ."
+    ". . ."
+    ". endicon ."
+    ;
 }
 
-/* -------------------------- */
-/* --------- ITEMS ---------- */
-/* -------------------------- */
+.contact_container {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(5, 1fr) ;
+    row-gap: .2rem;
+    grid-template-areas: 
+    ". . ."
+    ". title ."
+    ". . ."
+    ". . ."
+    ". endicon ."
+    ;
+}
 
-.hero {
+/* ---- ITEMS ---- */
+
+.hero_item {
     grid-area: hero;
+    z-index: 1;
     justify-self: center;
     
-    text-align: center;
-    opacity: 0;
+    text-align: center;   
 }
 
-.description-title {
-    grid-area: desc-title;
-
-    height: 100%;
-    
-    text-shadow: var(--secondary-color) 3px 3px 3px;
+.title {
+    grid-area: title;
+    z-index: 1;
 }
 
-.description-bodytext {
-    grid-area: desc-bdytxt;
+.desc_bdy {
+    grid-area: bdytxt;
+    z-index: 1;
 
-    height: 100%;
+    line-height: 1.42rem;
 }
 
-.arrow-down {
-    grid-area: key-down;
+.endicon {
+    grid-area: endicon;
+    z-index: 1;
 }
 
+.about_desc {
+    grid-area: abtdesc;
+    z-index: 1;
+}
 
-.planet {
-    top: 29.5%;
-    
-    width: 50vw;
-    height: 50vw;
+/* ---- WRAPPERS ---- */
+
+.page_info {
+    position: relative;
+    top: -200vh;
+    z-index: 1;
+
+    max-width: 100vw;
+}
+
+/* ---- GENERAL ---- */
+
+.fixed_background {
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
+}
+
+.spacer {
+    height: 50vh;
+}
+
+.planet_in_background {
+    position: sticky;
+    z-index: -1;
+    top: 0;
+    height: 150vh;
+    overflow: hidden;
+}
+
+.planet {  
+    position: absolute;
+    top: 6vh; 
+    width: 42vw;
+    height: 42vw;
     min-width: 50rem;
     min-height: 50rem;
+    overflow: hidden;
     border: .27rem solid #2f6078;
     box-shadow: inset .5rem .5rem .4rem rgba(0, 0, 0, 0.25), 0 0 2rem #327a9e;
-    
-    background: radial-gradient(var(--planet-color-dark) var(--planet-color));
 }
 
-.land { 
+.land {
     width: 300%;
     height: 100%;
     background: url(./res/earth-vector-bright.svg) 0 0 repeat / 50%;
 }
 
-.atmosphere {
-    top: 29%;
-    
-    width: 52vw;
-    height: 52vw;
+.atmosphere { 
+    position: absolute;
+    top: 4vh;
+    width: 44vw;
+    height: 44vw;
     min-width: 53rem;
     min-height: 53rem;
     
@@ -231,21 +221,19 @@ p {
 .orbit {
     position: absolute;
     z-index: 1;
-    top: 28.5%;
     left: 50%;
-    transform: translateX(-50%) translateY(-5%);
+    transform: translateX(-50%);
     
-    width: 55vw;
-    height: 55vw;
-    min-height: 70rem;
-    min-width: 70rem;
+    width: 51vw;
+    height: 51vw;
+    min-height: 65rem;
+    min-width: 65rem;
     opacity: 0;
 }
 
 .ship {
     position: absolute;
     z-index: 1;
-    top: -2.7rem;
     left:50%;
     transform: translateX(-50%);
     
@@ -256,7 +244,6 @@ p {
 
 .ship::after {
     position: absolute;
-    top: 1.3rem;
     
     width: 100%;
     height: 100%;
@@ -265,43 +252,8 @@ p {
     content: "";
 }
 
-.hero-title {
-    font-weight: 200;
-    text-shadow:var(--offwhite-faded) 1px 1px 5px, var(--secondary-color) 0 0 3rem;
-}
-
-.hero-subtitle {
-    margin-top: .14rem;
-    
-    font-weight: 300;
-    line-height: 1.43rem;
-}
-
-.description p {
-    line-height: 1.42rem;
-}
-
-/* -------------------------- */
-/* ------ ANIMATIONS -------- */
-/* -------------------------- */
-
-.fade-in-animation {
-    animation: fadein 1.5s ease-in .6s forwards
-}
-
-.neon-text-animation {
-    animation: neonglow 3s ease-in-out infinite alternate
-}
+/* ---- ANIMATIONS ---- */
 
 .rotate-land-animation {
-    animation: rotate 240s linear infinite
+    animation: rotate linear 210s infinite
 }
-
-.wobble-animation {
-    animation: wobble 8s ease-in-out alternate infinite
-}
-
-.phasein-animation {
-    animation: phasein 2s ease-out 1s forwards, fadein 1s ease-in 1s forwards
-}
-

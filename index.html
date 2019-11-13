@@ -4,71 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" 
+    rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    rel="stylesheet">
     <link rel="stylesheet" href="global-style.css">
     <link rel="stylesheet" href="keyframes.css">
-    <link rel="stylesheet" href="tablet.css" media="only screen and (min-width: 812px)">
-    <link rel="stylesheet" href="laptop.css" media="only screen and (min-width: 1366px)">
-    <link rel="stylesheet" href="desktop.css" media="only screen and (min-width: 1440px)">
-    <script src="global-scope.js"></script>
-    <script src="event-listeners.js"></script>
-    <script src="functions.js"></script>
-    <script src="observers.js"></script>
-    <title>Christian Ågren</title>
 </head>
 <body>
-    <div class="parallax">
-        <div class="parallax_group top-layer">
-            <div class="parallax_layer parallax_layer-content">
-                <div class="grid hero-container">
-                    <div class="hero fade-in-animation">
-                        <h1 class="hero-title neon-text-animation">Portfolio</h1>
-                        <h4 class="hero-subtitle faded-text"> Christian Ågren</h4>
-                    </div>
-                    <div class="description-title center-text">
-                        <h2>Hello!</h2>
-                    </div>
-                    <div class="description-bodytext flex-col center-text">
-                        <p>
-                             I've just begun my journey to&nbsp;becoming&nbsp;a <br>
-                             web-developer
-                             and made this portfolio to showcase my future work. <br>
-                        </p>
-                    </div>
-                    <div class="arrow-down center-text">
-                        <i class="material-icons">keyboard_arrow_down</i>
-                    </div>
-                </div>
-            </div>
+    <div class="fixed_background"></div>
+    <div class="spacer"></div>
+    <div class="planet_in_background">
+        <div class="planet sphere-shape">
+                <div class="land rotate-land-animation"></div>   
         </div>
-        <div class="parallax_group bot-layer">
-            <div class="parallax_layer parallax_layer-content">
-                <div class="grid about-container">
-                    <div class="center-text">
-                        <h2>About me</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Cumque, qui vitae nesciunt similique, iste animi ea quisquam ratione 
-                            dolore labore distinctio laboriosam a natus consequuntur adipisci illum 
-                            possimus esse. Dignissimos.
-                        </p>
-                    </div>
-                </div>
+        <div class="atmosphere sphere-shape"></div>
+        <div class="orbit phasein-animation">
+            <div class="ship wobble-animation"></div>
+        </div>
+    </div>
+    <div class="page_info">
+        <div class="hero_container grid">
+            <div class="hero_item">
+                <h1>Portfolio</h1>
+                <h4>Christian Ågren</h4>
             </div>
-            <div class="parallax_layer parallax_layer-back">
-                <div class="planet-container ">
-                    <div class="planet sphere-shape overflow-hidden">
-                        <div class="land rotate-land-animation"></div>   
-                    </div>
-                    <div class="atmosphere sphere-shape"></div>
-                    <div class="orbit phasein-animation">
-                        <div class="ship wobble-animation"></div>
-                    </div>
-                </div>
+            <div class="title center_text">
+                <h2>Hello!</h2>
             </div>
+            <div class="desc_bdy center_text">
+                <p>
+                        I've just begun my journey to&nbsp;becoming&nbsp;a <br>
+                        web-developer
+                        and made this portfolio to showcase my future work. <br>
+                </p>
+            </div>
+            <div class="endicon center_text"><i class="material-icons">keyboard_arrow_down</i></div>
+        </div>
+        <div class="about_container grid">
+            <div class="title center_text">
+                <h2>About me</h2>
+            </div>
+            <div class="about_desc">
+                <p>
+                        I'm a 26 year old dude from Sweden. <br>
+                        Prior to web-development I worked as a teamleader for a large e-commerce store i Scandinavia.
+                </p>
+            </div>
+            <div class="endicon center_text"><i class="material-icons">keyboard_arrow_down</i></div>
+        </div>
+        <div class="projects_container grid">
+            <div class="title center_text">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects_desc">
+                <!-- INSERT CONTENT GALLERY HERE -->
+            </div>
+            <div class="endicon center_text"><i class="material-icons">keyboard_arrow_down</i></div>
+        </div>
+        <div class="contact_container">
+            <div class="title center_text">
+                <h2>Contact me!</h2>
+            </div>
+            <div class="contact_desc">
+                <!-- INSERT CONTACT OPTIONS HERE -->
+            </div>
+            <div class="endicon center_text"><i class="material-icons">more_horiz</i></div>
         </div>
     </div>
 </body>
-</html>
+</html> 
