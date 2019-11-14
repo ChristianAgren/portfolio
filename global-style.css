@@ -73,7 +73,7 @@ h2, i {
     grid-template-areas: 
     ". . . . ."
     ". hero hero hero ."
-    ". . . . ."
+    ". . ship . ."
     ". . title . ."
     ". bdytxt bdytxt bdytxt ."
     ". . endicon . ."
@@ -157,10 +157,11 @@ h2, i {
 
 .page_info {
     position: relative;
-    top: -200vh;
+    top: -150vh;
     z-index: 1;
 
     max-width: 100vw;
+    height: 350vh;
 }
 
 /* ---- GENERAL ---- */
@@ -184,7 +185,7 @@ h2, i {
     position: sticky;
     z-index: -1;
     top: 0;
-    height: 150vh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -232,10 +233,10 @@ h2, i {
 }
 
 .ship {
-    position: absolute;
+    grid-area: ship;
     z-index: 1;
-    left:50%;
-    transform: translateX(-50%);
+    justify-self: center;
+    align-self: center;
     
     width: 14rem;
     height: 6rem;
@@ -244,12 +245,14 @@ h2, i {
 
 .ship::after {
     position: absolute;
-    
-    width: 100%;
-    height: 100%;
-    
+    z-index: 1;
+    transform: translateY(45%);
+
+    width: 14rem;
+    height: 6rem;
     background: radial-gradient(#327a9e6b 5%, rgba(255, 255, 255, 0) 68%) ;
     content: "";
+    opacity: .6;
 }
 
 /* ---- ANIMATIONS ---- */
