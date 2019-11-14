@@ -310,7 +310,7 @@ h2, i {
 .planet_in_background {
     position: sticky;
     /* z-index: -1; */
-    top: 0;
+    /* top: 0; */
     bottom: 0;
     height: 100vh;
     min-height: 55rem;

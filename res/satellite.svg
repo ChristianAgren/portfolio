@@ -1,0 +1,32 @@
+<svg width="145" height="70" viewBox="0 0 145 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M90.5 13.5L86 22.5L94 28.5" stroke="#C4C4C4"/>
+<path d="M90.5 13.5L141.5 1L144 15.5L94 28.5L90 25.5L88.25 18L90.5 13.5Z" fill="#12323E"/>
+<path d="M90.5 13.5L141.5 1L144 15.5L94 28.5L90 25.5L88.25 18L90.5 13.5Z" fill="url(#paint0_linear)"/>
+<path d="M90.5 13.5L141.5 1L144 15.5L94 28.5M90.5 13.5L94 28.5M90.5 13.5L88.25 18L90 25.5L94 28.5" stroke="#C4C4C4"/>
+<path d="M88 30.5L83 15.5L62 26.5L70.5 38.5L88 30.5Z" fill="#ADADAD"/>
+<circle cx="72" cy="20" r="12" fill="#ADADAD"/>
+<circle cx="78" cy="32" r="11" fill="#12323E"/>
+<path d="M91.5 39L88 27.5L68.5 37L75 47L91.5 39Z" fill="#12323E"/>
+<circle cx="84.5" cy="44.5" r="10.5" fill="#ADADAD"/>
+<circle cx="86.5" cy="47.5" r="10.5" fill="#12323E"/>
+<circle cx="87.5" cy="49.5" r="10.5" fill="#ADADAD"/>
+<path d="M100.5 50L94.5 42L77 47.5L79.5 59L100.5 50Z" fill="#ADADAD"/>
+<ellipse cx="90.4558" cy="55.6457" rx="11.5" ry="10" transform="rotate(-22.5516 90.4558 55.6457)" fill="#C4C4C4"/>
+<ellipse cx="91.4284" cy="57.4707" rx="6.91982" ry="6.52427" transform="rotate(-15.7161 91.4284 57.4707)" fill="#ADADAD"/>
+<path d="M98.2986 58.1393C99.1151 60.9777 97.1309 64.0398 93.8668 64.9787C90.6027 65.9176 87.2947 64.3778 86.4783 61.5394C85.6618 58.7011 87.646 55.639 90.9101 54.7001C94.1742 53.7612 97.4822 55.301 98.2986 58.1393Z" fill="#C4C4C4"/>
+<path d="M6.5 55.5L1 40L10.75 36.8661L20.5 33.7321L34.5 29.2321L48 24.8929L57 22L61.25 24.75L63.5 32.5L61.5 37.5L53 40.2818L39.5 44.7L25.5 49.2818L16 52.3909L6.5 55.5Z" fill="#12323E"/>
+<path d="M6.5 55.5L1 40L10.75 36.8661L20.5 33.7321L34.5 29.2321L48 24.8929L57 22L61.25 24.75L63.5 32.5L61.5 37.5L53 40.2818L39.5 44.7L25.5 49.2818L16 52.3909L6.5 55.5Z" fill="url(#paint1_linear)"/>
+<path d="M57 22L61.25 24.75L63.5 32.5L61.5 37.5M57 22L48 24.8929M57 22L59.25 29.75M61.5 37.5L53 40.2818M61.5 37.5L59.25 29.75M48 24.8929L53 40.2818M48 24.8929L34.5 29.2321M53 40.2818L39.5 44.7M34.5 29.2321L39.5 44.7M34.5 29.2321L20.5 33.7321M39.5 44.7L25.5 49.2818M20.5 33.7321L25.5 49.2818M20.5 33.7321L10.75 36.8661M25.5 49.2818L16 52.3909M10.75 36.8661L1 40L6.5 55.5L16 52.3909M10.75 36.8661L16 52.3909M59.25 29.75L9 46.5" stroke="#C4C4C4"/>
+<path d="M57 22L65.5 27.5L61.5 37.5" stroke="#C4C4C4"/>
+<path d="M92.5 21.5L139.5 9.5M97 12L100.5 27M110 9L113 23.5M123 6L125.5 20M135 2.5L137.5 17" stroke="#C4C4C4"/>
+<defs>
+<linearGradient id="paint0_linear" x1="86" y1="23" x2="143" y2="8.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0B1316"/>
+<stop offset="0.5625" stop-color="#0A1D24" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="66" y1="27.5" x2="3" y2="48.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0A1D24"/>
+<stop offset="0.59375" stop-color="#0A1D24" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
