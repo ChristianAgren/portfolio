@@ -42,11 +42,7 @@ h2, i {
 
 /* ---- OOCSS ---- */
 
-.grid {
-    margin:0 0 10rem 0;
-
-    height: 95vh;
-
+.grid {  
     display: grid;
 }
 
@@ -59,14 +55,14 @@ h2, i {
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
-
+    
     border-radius: 50%;
 }
 
 /* ---- CONTAINERS ---- */
 
 .hero_container {
-
+    height: 95vh;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: .4fr .2fr 1.5fr .1fr .1fr .1fr .2fr .2fr;
     row-gap: .2rem;
@@ -82,7 +78,20 @@ h2, i {
     ;
 }
 
+.spacer_container {
+    height: 50vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: .2rem;
+
+    grid-template-areas: 
+    ". . ."
+    ". image ."
+    ". . .";
+}
+
 .about_container {
+    height: 95vh;
     grid-template-columns: .5fr .3fr 1.5fr .3fr .5fr;
     grid-template-rows: .4fr .2fr .3fr .3fr .1fr .6fr .1fr .2fr ;
     row-gap: .2rem;
@@ -99,7 +108,7 @@ h2, i {
 }
 
 .projects_container {
-
+    height: 95vh;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: repeat(5, 1fr) ;
     row-gap: .2rem;
@@ -113,12 +122,13 @@ h2, i {
 }
 
 .contact_container {
+    height: 95vh;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: repeat(5, 1fr) ;
     row-gap: .2rem;
     grid-template-areas: 
-    ". . ."
     ". title ."
+    ". sat ."
     ". . ."
     ". . ."
     ". endicon ."
@@ -152,6 +162,24 @@ h2, i {
 .endicon {
     grid-area: endicon;
     z-index: 1;
+}
+
+.spacer_image {
+    grid-area: image;
+    justify-self: center;
+
+    width: 7.5vw;
+    height: 7.5vw;
+    min-width: 8rem;
+    min-height: 8rem;
+}
+
+.astronaut {
+    background: url(./res/astronaut.svg) no-repeat center 100%;
+}
+
+.second_astronaut {
+    background: url(./res/astronaut2.svg) no-repeat center 100%;
 }
 
 .about_desc {
@@ -230,25 +258,26 @@ h2, i {
     background: url(./res/profile.jpg) center no-repeat / 115%;
 }
 
-.profile::after {
-    position: absolute;
+.satellite {
+    grid-area: sat;
     z-index: 1;
-    left: 50%;
-    transform: translateX(-50%) translateY(-250%) rotate(-10deg);
+    justify-self: center;
+    align-self: center;
 
-    width: 7.5vw;
-    height: 7.5vw;
-    min-width: 6rem;
-    min-height: 6.5rem;
-    background: url(./res/astronaut.svg) no-repeat center ;
-    content: "";
+    width: 14rem;
+    height: 8rem;
+    background: url(./res/satellite.svg) no-repeat center;
 }
 
 /* ---- WRAPPERS ---- */
 
 .page_info {
-    position: relative;
-    top: -150vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* top: -155vh; */
+    /* transform: translateY(-45%); */
     z-index: 1;
     
     max-width: 100vw;
@@ -268,15 +297,23 @@ h2, i {
     background: linear-gradient(var(--primary-color), var(--secondary-color));
 }
 
+.planet_wrapper {
+    position: relative;
+    top:50vh
+}
+
 .spacer {
-    height: 50vh;
+    position: relative;
+    height: 300vh;
 }
 
 .planet_in_background {
     position: sticky;
-    z-index: -1;
+    /* z-index: -1; */
     top: 0;
+    bottom: 0;
     height: 100vh;
+    min-height: 55rem;
     overflow: hidden;
 }
 
