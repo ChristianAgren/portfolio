@@ -19,6 +19,16 @@
     font-size: 36px;
 }
 
+i.fab.fa-facebook {
+    font-size: 53px;
+}
+
+i.fas,
+i.fab {
+    font-size: 36px;
+    border-radius: 50%;
+}
+
 body {
     position: relative;
     font-size: 1rem;
@@ -109,7 +119,7 @@ h2, i {
 
 .projects_container {
     height: 95vh;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr fr 1fr;
     grid-template-rows: repeat(5, 1fr) ;
     row-gap: .2rem;
     grid-template-areas: 
@@ -122,16 +132,21 @@ h2, i {
 }
 
 .contact_container {
-    height: 95vh;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: repeat(5, 1fr) ;
+    height: 100vh;
+    width: 97vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .05fr .1fr .1fr .4fr .4fr .4fr .4fr .2fr .1fr;
     row-gap: .2rem;
     grid-template-areas: 
+    ". . ."
     ". title ."
+    ". desc ."
     ". sat ."
-    ". . ."
-    ". . ."
+    ". contone ."
+    "conttwo . ."
+    ". . contthree"
     ". endicon ."
+    ". . ."
     ;
 }
 
@@ -264,9 +279,52 @@ h2, i {
     justify-self: center;
     align-self: center;
 
-    width: 14rem;
-    height: 8rem;
+    width: 10rem;
+    height: 6rem;
     background: url(./res/satellite.svg) no-repeat center;
+}
+
+.contact {
+    justify-self: center;
+    align-self: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: var(--offwhite) 0 0 0 3px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact::after {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: var(--secondary-color) 3px 3px 3px;
+    content:"";
+}
+
+.first_SoMe {
+    grid-area: contone;
+    justify-self: center;
+    align-self: center;
+    width: 53px;
+    height: 53px;
+}
+
+.second_SoMe {
+    grid-area: conttwo;
+}
+
+.third_SoMe {
+    grid-area: contthree;
+}
+
+.contact_desc {
+    grid-area: desc;
+    justify-self: center;
 }
 
 /* ---- WRAPPERS ---- */
@@ -294,7 +352,8 @@ h2, i {
     bottom: 0;
     left: 0;
 
-    background: linear-gradient(var(--primary-color), var(--secondary-color));
+    background: linear-gradient(var(--primary-color),
+                                var(--secondary-color));
 }
 
 .planet_wrapper {
