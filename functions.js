@@ -1,17 +1,50 @@
 window.addEventListener('load', loadPage)
 
 
-
 /**
  * Runs functions on page load
  */
 function loadPage() {
     rotateImages();   
 
-    const downButton = document.querySelectorAll('div.endicon');
-    console.log(downButton); 
 
+}
+
+
+/**
+ * Declares eventlisteners for scrollbuttons
+ */
+function declareScrollButtons() {
+    const   scrollButton = document.querySelectorAll('div.endicon');
     
+    scrollButton.forEach(button => {
+        button.addEventListener('click', gotoNextMainGrid)        
+    });
+}
+
+/**
+ * Locates next container and scrolls it into view
+ * @param {MouseEvent} event Trigger for user input
+ */
+function gotoNextParagraph(event) {
+    const   getContainers = document.querySelectorAll('div.main');
+    let     pageIndex = 0;
+    
+    if (event.target.innerText === "more_horiz") {
+        console.log(getContainers[0]);
+        getContainers[0].scrollIntoView({behavior:'smooth'})  //Bad mobile support, fix in future
+    }
+    else {
+        getContainers.forEach(container => {
+            pageIndex++
+            checkif = container.contains(event.target)
+            
+            if (checkif) {   
+            console.log(getContainers[pageIndex]);
+            getContainers[pageIndex].scrollIntoView({behavior:'smooth'}) //Bad mobile support, fix in future
+            } 
+        });
+    } 
 }
 
 /**
