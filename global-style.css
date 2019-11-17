@@ -464,3 +464,11 @@ h2, i {
 .rotate-land-animation {
     animation: rotate linear 210s infinite
 }
+
+.rotateClockwise {
+    animation: spin linear 20s infinite
+}
+
+.rotateCounterClockwise {
+    animation: spin reverse linear 20s infinite
+}
