@@ -207,6 +207,7 @@ h2, i {
 
 .endicon {
     grid-area: endicon;
+    cursor: pointer;
 }
 
 .spacer_image {

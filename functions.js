@@ -6,8 +6,7 @@ window.addEventListener('load', loadPage)
  */
 function loadPage() {
     rotateImages();   
-
-
+    declareScrollButtons();
 }
 
 
@@ -18,7 +17,7 @@ function declareScrollButtons() {
     const   scrollButton = document.querySelectorAll('div.endicon');
     
     scrollButton.forEach(button => {
-        button.addEventListener('click', gotoNextMainGrid)        
+        button.addEventListener('click', gotoNextParagraph)        
     });
 }
 
