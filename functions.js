@@ -1,22 +1,28 @@
 window.addEventListener('load', loadPage)
 
+
+
+/**
+ * Runs functions on page load
+ */
 function loadPage() {
-    console.log(rotateAstronauts());
+    rotateImages();   
+
+    const downButton = document.querySelectorAll('div.endicon');
+    console.log(downButton); 
+
     
 }
 
+/**
+ * Manages astronaut rotation
+ */
+function rotateImages() {
+    const   images = document.querySelectorAll('div.spacer_image');
 
-function rotateAstronauts() {
-    const   astroOne = document.querySelector('div.astronaut'),
-            astroTwo = document.querySelector('div.second_astronaut'),
-            firstRandomValue = randomizeOutput(),
-            secondRandomValue = randomizeOutput();
-
-            console.log(typeof astroOne);
-            
-
-        addRotateAnimation (astroOne, firstRandomValue)    
-        addRotateAnimation (astroTwo, secondRandomValue)    
+    images.forEach(image => {
+        addRotateAnimation(image, randomizeOutput())
+    }); 
 }
 
 /**
@@ -33,9 +39,11 @@ function addRotateAnimation(div, value) {
     }
 }
 
+/**
+ * Returns 1 or 0 randomly
+ */
 function randomizeOutput() {
-    let randomValue = Math.round(1 * Math.random(1, 2));
+    const randomValue = Math.round(1 * Math.random(1, 2));
     
     return randomValue
 }
-
