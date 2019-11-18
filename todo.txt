@@ -1,0 +1,13 @@
+spara sectionindex i localstorage
+
+scrolla till sectionindex vid load
+om sectionindex blir 0 eller 3 så ska knapp höger respektive vänster inte göra ngt
+om användaren scrollar manuellt så ska en forced scroll utlösas som byter sectionindex samt scrollar
+
+    spara event.target.scrollLeft till localstorage (0 om värdet inte finns)
+    När användaren scrollar about:
+        kontrollera vad event.target.scrollLeft blir.
+        jämför scrollLeft med förvalda värden.
+        Scrolla about till närmaste förvalda värde.
+
+sätt duration på det så att det blir smooth (se om det går att göra en smidig transition)

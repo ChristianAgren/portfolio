@@ -1,24 +1,55 @@
 window.addEventListener('load', loadPage)
 
-
 /**
  * Runs functions on page load
  */
 function loadPage() {
     rotateImages();   
-    declareScrollButtons();
+    declareEventListeners();
 }
 
 
 /**
  * Declares eventlisteners for scrollbuttons
  */
-function declareScrollButtons() {
-    const   scrollButton = document.querySelectorAll('div.endicon');
+function declareEventListeners() {
+    const   mainScrollButtons = document.querySelectorAll('div.endicon'),
+            aboutScrollButtons = document.querySelectorAll('div.scroll'),
+            aboutCarouselDiv = document.querySelector('div.about');
     
-    scrollButton.forEach(button => {
+    aboutScrollButtons.forEach(button => {
+        button.addEventListener('click', gotoNextAboutSection)
+    });
+
+    mainScrollButtons.forEach(button => {
         button.addEventListener('click', gotoNextParagraph)        
     });
+
+    aboutCarouselDiv.addEventListener('scroll', gotoNextAboutSection)
+}
+
+function gotoNextAboutSection(event) {
+    // const   getSections = document.querySelectorAll('div.about_card');
+    console.log(event);
+    
+    // if (event.target.innerText === "keyboard_arrow_right") {
+    //     aboutSectionIndex++;
+    //     getSections[aboutSectionIndex].scrollIntoView({behavior:'smooth'})
+    //     console.log(getSections, aboutSectionIndex);
+    // }
+
+    const   getSections = document.querySelectorAll('div.about_card');
+    let     sectionsArray = [],
+            aboutSectionIndex = 0;
+
+    getSections.forEach(card => {
+                sectionsArray.push(aboutSectionIndex)
+                aboutSectionIndex++
+    });
+
+    console.log(getSections, sectionsArray);
+    
+    
 }
 
 /**

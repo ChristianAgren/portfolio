@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" 
@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
     <link rel="stylesheet" href="global-style.css">
+    <link rel="stylesheet" href="tablet.css" media="only screen and (min-width: 768px)">
+    <link rel="stylesheet" href="laptop.css" media="only screen and (min-width: 1024px)">
     <link rel="stylesheet" href="keyframes.css">
     <script src="https://kit.fontawesome.com/db1fa6cdaf.js" crossorigin="anonymous"></script>
     <script defer src="global-scope.js"></script>
@@ -54,12 +56,48 @@
                 <h2>About me</h2>
             </div>
             <div class="profile"></div>
-            <div class="about_desc">
-                <p>
-                        I'm a 26 year old dude from Sweden. <br>
-                        Prior to web-development I worked as a teamleader for one of the largest e-commerce stores in Scandinavia.
-                </p>
+            <div class="carousel">
+                <div class="about">
+                    <div class="about_card description">
+                        <h3>Who am I?</h3>
+                        <p>
+                                I'm a 26 year old dude from Sweden.
+                                Prior to web-development I&nbsp;worked&nbsp;as&nbsp;a&nbsp;teamleader for one of the largest <br> e-commerce stores in Scandinavia.
+                        </p>
+                    </div>
+                    <div class="about_card interests">
+                        <h3>Experiences</h3>
+                        <ul>
+                            <li><strong>Komplett Group</strong></li>
+                            <ul>
+                                <li>Teamleader: ~2 years</li>
+                                <li>Customer rep.: ~1 year</li>
+                                <li>Agent: ~1 year</li>
+                            </ul>
+                            <li><strong>Clas Ohlson</strong></li>
+                            <ul>
+                                <li>Salesperson: ~1.5 years</li>
+                            </ul>
+                            <li><strong>Medieinstitutet</strong></li>
+                                <ul>
+                                    <li>Frontend: ongoing</li>
+                                </ul>
+                        </ul>
+                    </div>
+                    <div class="about_card jobs">
+                        <h3>Characteristics</h3>
+                        <ul>
+                            <li>Determined</li>
+                            <li>Takes lead</li>
+                            <li>Driven</li>
+                            <li>Creative</li>
+                            <li>Detailed</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <div class="scroll left"><i class="material-icons">keyboard_arrow_left</i></div>
+            <div class="scroll right"><i class="material-icons">keyboard_arrow_right</i></div>
             <div class="endicon center_text"><i class="material-icons">keyboard_arrow_down</i></div>
         </div>
         <div class="projects_container main grid">
@@ -89,8 +127,8 @@
             <div class="first_SoMe">
                 <a class="fab fa-facebook" href="https://www.facebook.com/imofftolalaland"></a>
             </div>
-            <div class="left"></div>
-            <div class="right"></div>
+            <div class="left_line"></div>
+            <div class="right_line"></div>
             <div class="second_SoMe contact">
                 <a class="fab fa-twitter" href="https://twitter.com/ohsoogreen"></a>
             </div>
