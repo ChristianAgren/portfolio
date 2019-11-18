@@ -45,7 +45,7 @@ function gotoNextParagraph(event) {
         });
     } 
 }
-
+ 
 /**
  * Manages astronaut rotation
  */

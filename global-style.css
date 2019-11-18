@@ -19,12 +19,14 @@
     font-size: 36px;
 }
 
-i.fab.fa-facebook {
+a.fab.fa-facebook {
     font-size: 53px;
 }
 
 i.fas,
-i.fab {
+i.fab,
+a.fas,
+a.fab {
     font-size: 36px;
     border-radius: 50%;
 }
@@ -46,14 +48,21 @@ h4 {
     font-weight: 300;
 }
 
-h2, i {
+h2, i, a {
     text-shadow: var(--secondary-color) 3px 3px 3px;
+    color: var(--offwhite);
+    text-decoration: none;
+}
+
+a {
+    font-size: 1.2rem;
 }
 
 /* ---- OOCSS ---- */
 
 .grid {  
     display: grid;
+    position: relative;
 }
 
 .center_text {
@@ -74,7 +83,7 @@ h2, i {
 .hero_container {
     height: 95vh;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: .4fr .2fr 1.5fr .1fr .1fr .1fr .2fr .2fr;
+    grid-template-rows: .2fr .3fr .4fr .1fr .5fr .1fr;
     row-gap: .2rem;
     grid-template-areas: 
     ". . . . ."
@@ -82,8 +91,6 @@ h2, i {
     ". . ship . ."
     ". . title . ."
     ". bdytxt bdytxt bdytxt ."
-    ". . . . ."
-    ". . endicon . ."
     ". . . . ."
     ;
 }
@@ -103,17 +110,15 @@ h2, i {
 .about_container {
     height: 95vh;
     grid-template-columns: .5fr .3fr 1.5fr .3fr .5fr;
-    grid-template-rows: .1fr .2fr .3fr .3fr .1fr .6fr .1fr .2fr ;
+    grid-template-rows: .05fr .1fr .1fr .1fr .1fr .7fr;
     row-gap: .2rem;
     grid-template-areas: 
     ". . . . ."
     ". title title title ."
     ". . profile . ."
     ". . profile . ."
-    ". . . . ."
     ". abtdesc abtdesc abtdesc ."
     ". . . . ."
-    ". . endicon . ."
     ;
 }
 
@@ -127,7 +132,7 @@ h2, i {
     ". title ."
     ". . ."
     ". . ."
-    ". endicon ."
+    ". . ."
     ;
 }
 
@@ -135,7 +140,7 @@ h2, i {
     height: 30vh;
     width: 95vw;
     grid-template-columns: .3fr 1fr .3fr;
-    grid-template-rows: .5fr .1fr .1fr .4fr;
+    grid-template-rows: .7fr .1fr .1fr .4fr;
     row-gap: .2rem;
     grid-template-areas: 
     ". . ."
@@ -146,24 +151,31 @@ h2, i {
 }
 
 .medias_container {
-    height: 70vh;
-    grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr 2fr;
-    grid-template-rows: repeat(9,1fr);
-    row-gap: .2rem;
+    height: 75vh;
+    grid-template-columns:1.2fr 1fr 1fr 1fr 1fr 1fr 1.2fr;
+    grid-template-rows: .3fr 1fr .5fr 1fr .1fr .1fr .1fr 1fr;
+    row-gap: .1rem;
     grid-template-areas: 
     ". . . topline . . ."
     ". . . contone . . ."
     ". . leftdiag . rightdiag . ."
     ". conttwo midline midline midline contthree ."
     ". . . . . . ."
-    ". . . . . . ."
-    ". . . . . . ."
-    ". . . endicon . . ."
+    ". emaildesc emaildesc emaildesc emaildesc emaildesc ."
+    ". email email email email email ."
     ". . . . . . ."
     ;
 }
 
 /* ---- ITEMS ---- */
+
+.contact_email_desc {
+    grid-area: emaildesc;
+}
+
+.contact_email {
+    grid-area: email;
+}
 
 .hero_item {
     grid-area: hero;
@@ -206,7 +218,11 @@ h2, i {
 }
 
 .endicon {
-    grid-area: endicon;
+    position: absolute;
+    z-index: 1;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
     cursor: pointer;
 }
 
@@ -246,7 +262,8 @@ h2, i {
 
 .about_desc {
     grid-area: abtdesc;
-    top: 50%;
+    position: absolute;
+    top:0;
     justify-self: center;
     width: 18vw;
     height: 18vw;
@@ -254,27 +271,14 @@ h2, i {
     min-height: 18rem;
     transform: translateY(-3%);
 
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.10);
+    background-color: var(--offwhite);
+    color: var(--primary-color);
+    border-radius: 1rem;
+    box-shadow: var(--secondary-color) 3px 3px 3px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.about_desc p::before {
-    position: absolute;
-    top: -8%;
-    left: -2%;
-
-    min-width: 6rem;
-    min-height: 6rem;
-    width: 5vw;
-    height: 5vw;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.02);
-    background: rgba(255, 255, 255, 0.1);
-    content: "";
 }
 
 .about_desc p {
@@ -304,15 +308,6 @@ h2, i {
     width: 10rem;
     height: 6rem;
     background: url(./res/satellite.svg) no-repeat center center;
-}
-
-.contact::after {
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    box-shadow: var(--secondary-color) 3px 3px 3px;
-    content:"";
 }
 
 .first_SoMe {
