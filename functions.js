@@ -6,7 +6,7 @@ window.addEventListener('load', loadPage)
 function loadPage() {
     rotateImages();   
     declareEventListeners(); 
-    loadProjectCardsToDOM();  
+    createDOMProjectElements();  
 }
 
 /**
