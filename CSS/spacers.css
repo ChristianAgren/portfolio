@@ -1,0 +1,36 @@
+/* GRID-CONTAINER */
+
+.spacer_container {
+    height: 50vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: .2rem;
+
+    grid-template-areas: 
+    ". . ."
+    ". image ."
+    ". . .";
+}
+
+/* GRID-ITEMS */
+
+.spacer_image {
+    grid-area: image;
+    justify-self: center;
+    align-self: center;
+
+    width: 7rem;
+    height: 7rem;
+}
+
+/* OTHER */
+
+.astronaut {
+    background: url(../res/astronaut.svg) no-repeat center 100%;
+    background-position: center center;
+}
+
+.second_astronaut {
+    background: url(../res/astronaut2.svg) no-repeat 100%;
+    background-position: center center;
+}

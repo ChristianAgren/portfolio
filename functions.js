@@ -1,60 +1,70 @@
 window.addEventListener('load', loadPage)
-
+    
 /**
  * Runs functions on page load
  */
 function loadPage() {
     rotateImages();   
-    declareEventListeners();
+    declareEventListeners();   
 }
 
 
 /**
- * Declares eventlisteners for scrollbuttons
+ * Declares eventlisteners
  */
 function declareEventListeners() {
     const   mainScrollButtons = document.querySelectorAll('div.endicon'),
-            aboutScrollButtons = document.querySelectorAll('div.scroll'),
-            aboutCarouselDiv = document.querySelector('div.about');
-    
+            aboutScrollButtons = document.querySelectorAll('div.scroll');
+                
     aboutScrollButtons.forEach(button => {
         button.addEventListener('click', gotoNextAboutSection)
     });
-
+    
     mainScrollButtons.forEach(button => {
         button.addEventListener('click', gotoNextParagraph)        
     });
-
-    aboutCarouselDiv.addEventListener('scroll', gotoNextAboutSection)
 }
 
+/**
+ * Scrolls between character cards in about section
+ * @param {MouseEvent} event Triggers when user presses scroll buttons in about
+ */
 function gotoNextAboutSection(event) {
-    // const   getSections = document.querySelectorAll('div.about_card');
-    console.log(event);
+    const   aboutDiv = document.querySelector('div.about');
     
-    // if (event.target.innerText === "keyboard_arrow_right") {
-    //     aboutSectionIndex++;
-    //     getSections[aboutSectionIndex].scrollIntoView({behavior:'smooth'})
-    //     console.log(getSections, aboutSectionIndex);
-    // }
-
-    const   getSections = document.querySelectorAll('div.about_card');
-    let     sectionsArray = [],
-            aboutSectionIndex = 0;
-
-    getSections.forEach(card => {
-                sectionsArray.push(aboutSectionIndex)
-                aboutSectionIndex++
-    });
-
-    console.log(getSections, sectionsArray);
-    
-    
+    if (event.target.innerText === "keyboard_arrow_right") {
+        if (aboutDiv.clientWidth === 256) {
+            if (aboutDiv.scrollLeft < 288) {
+                aboutDiv.scrollLeft = 0
+            }
+            else {
+                aboutDiv.scrollLeft = 288
+            }
+            aboutDiv.scrollLeft += 288
+        }
+        else {
+            aboutDiv.scrollLeft += aboutDiv.clientWidth
+        }
+    }
+    else {
+        if (aboutDiv.clientWidth === 256) {
+            if (aboutDiv.scrollLeft > 288 && aboutDiv.scrollLeft < 577) {
+                aboutDiv.scrollLeft = 577
+            }
+            else {
+                aboutDiv.scrollLeft = 288
+            }
+            aboutDiv.scrollLeft -= 288
+        }
+        else {
+            aboutDiv.scrollLeft -= aboutDiv.clientWidth
+        }
+    }
 }
 
 /**
  * Locates next container and scrolls it into view
- * @param {MouseEvent} event Trigger for user input
+ * @param {MouseEvent} event Triggers when user presses endicons
  */
 function gotoNextParagraph(event) {
     const   getContainers = document.querySelectorAll('div.main');
@@ -62,7 +72,7 @@ function gotoNextParagraph(event) {
     
     if (event.target.innerText === "more_horiz") {
         console.log(getContainers[0]);
-        getContainers[0].scrollIntoView({behavior:'smooth'})  //Bad mobile support, fix in future
+        getContainers[0].scrollIntoView({behavior:'smooth'})  //Bad IOSmobile support, fix in future
     }
     else {
         getContainers.forEach(container => {
@@ -70,8 +80,7 @@ function gotoNextParagraph(event) {
             checkif = container.contains(event.target)
             
             if (checkif) {   
-            console.log(getContainers[pageIndex]);
-            getContainers[pageIndex].scrollIntoView({behavior:'smooth'}) //Bad mobile support, fix in future
+            getContainers[pageIndex].scrollIntoView({behavior:'smooth'}) //Bad IOSmobile support, fix in future
             } 
         });
     } 

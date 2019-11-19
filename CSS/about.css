@@ -1,0 +1,121 @@
+/* GRID-CONTAINER */
+
+.about_container {
+    height: 95vh;
+    width: 100%;
+    grid-template-columns: .5fr .3fr auto .3fr .5fr;
+    grid-template-rows: .05fr .1fr .1fr 1fr .7fr;
+    row-gap: .2rem;
+    grid-template-areas: 
+    ". . . . ."
+    ". title title title ."
+    ". . profile . ."
+    ". . abt . ."
+    ". . . . ."
+    ;
+}
+
+/* GRID-ITEMS */
+
+.profile {
+    grid-area: profile;
+    z-index: 2;
+    justify-self: center;
+    max-width: 30rem;
+    max-height: 30rem;
+    width: 25vh;
+    height: 25vh;
+    min-width: 9rem;
+    min-height: 9rem;
+    border-radius: 50%;
+    border: .5rem solid var(--offwhite-faded);
+    background: url(../res/profile.jpg) center center no-repeat / 115%;
+}
+
+/* OTHER */
+
+.carousel {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 16rem;
+    height: 55%;
+}
+
+.about {
+    position: absolute;
+    left:0;
+    top: 0;
+    
+    height: 100%;
+    width: 100%;
+    
+    overflow-y: auto;
+    display: flex;
+    ;
+}
+
+.description {
+    margin: 0 1rem 0 0;
+}
+
+.interests {
+    margin: 0 1rem 0 1rem;
+}
+
+.jobs {
+    margin: 0 0 0 1rem;
+}
+
+.about_card {
+    
+    height: 95%;
+    width: 100%;
+    
+    max-width: 16rem;
+    min-width: 16rem;
+    
+    background-color: var(--offwhite);
+    color: var(--primary-color);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_card p {
+    padding: 1rem 2rem;
+    max-width: 20rem;
+}
+
+.about_card > ul {
+    padding: 1rem 1rem 2rem 2rem;
+    max-width: 20rem;
+}
+
+.about_card > ul > ul {
+    font-size: .9rem;
+    padding: 0 0 .4rem 1rem;
+}
+
+.scroll {
+    position: absolute;
+    top: 50%;
+}
+
+.scroll > i.material-icons {
+    z-index: 3;
+    font-size: 3rem;
+    text-shadow: var(--secondary-color) 0 0 4px;
+}
+
+.left {
+    left: 1%;
+}
+
+.right {
+    right: 1%
+}

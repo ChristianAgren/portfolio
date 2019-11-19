@@ -1,0 +1,133 @@
+/* GRID-CONTAINERS */
+
+.contact_container {
+    height: 30vh;
+    width: 95vw;
+    grid-template-columns: .3fr 1fr .3fr;
+    grid-template-rows: .7fr .1fr .1fr .4fr;
+    row-gap: .2rem;
+    grid-template-areas: 
+    ". . ."
+    ". title ."
+    ". desc ."
+    ". sat ."
+    ;
+}
+
+.medias_container {
+    height: 75vh;
+    grid-template-columns:1.2fr 1fr 1fr 1fr 1fr 1fr 1.2fr;
+    grid-template-rows: .3fr 1fr .5fr 1fr .1fr .1fr .1fr 1fr;
+    row-gap: .1rem;
+    grid-template-areas: 
+    ". . . topline . . ."
+    ". . . contone . . ."
+    ". . leftdiag . rightdiag . ."
+    ". conttwo midline midline midline contthree ."
+    ". . . . . . ."
+    ". emaildesc emaildesc emaildesc emaildesc emaildesc ."
+    ". email email email email email ."
+    ". . . . . . ."
+    ;
+}
+
+/* GRID-ITEMS */
+
+.contact_desc {
+    grid-area: desc;
+    justify-self: center;
+}
+
+.satellite {
+    grid-area: sat;
+    justify-self: center;
+    align-self: center;
+
+    width: 10rem;
+    height: 6rem;
+    background: url(../res/satellite.svg) no-repeat center center;
+}
+
+.first_SoMe {
+    grid-area: contone;
+    justify-self: center;
+    align-self: center;
+    width: 53px;
+    height: 53px;
+}
+
+.second_SoMe {
+    grid-area: conttwo;
+}
+
+.third_SoMe {
+    grid-area: contthree;
+}
+
+.top_line {
+    grid-area: topline;
+    z-index: 1;
+    width: 100%;
+}
+
+.left_line {
+    grid-area: leftdiag;
+    width:100%;
+    background: linear-gradient(to top left, rgba(255, 255, 255, 0) calc(50% - 2px), var(--offwhite-faded), rgba(255, 255, 255, 0) calc(50% + 2px) )
+}
+
+.right_line {
+    grid-area: rightdiag;
+    width:100%;
+    background: linear-gradient(to top right, rgba(255, 255, 255, 0) calc(50% - 2px), var(--offwhite-faded), rgba(255, 255, 255, 0) calc(50% + 2px) )
+}
+
+.mid_line {
+    grid-area: midline;
+    z-index: 1;
+    width: 100%;
+}
+
+.contact_email_desc {
+    grid-area: emaildesc;
+}
+
+.contact_email {
+    grid-area: email;
+}
+
+/* OTHER */
+
+.contact {
+    justify-self: center;
+    align-self: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: var(--offwhite) 0 0 0 3px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid_line hr {
+    position: relative;
+    left: 12%;
+    right: -12%;
+    top: 50%;
+    width: 76%;
+    border: 1px solid var(--offwhite-faded);
+}
+
+.top_line hr {
+    position: relative;
+    top: 12%;
+    bottom: -12%;
+    left: 50%;
+    height: 76%;
+    width: 0;
+    transform:rotate(deg) translateX(-50%);
+    border: 1px solid var(--offwhite-faded);
+}
+
