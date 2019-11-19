@@ -2,7 +2,7 @@
 
 .contact_container {
     height: 30vh;
-    width: 95vw;
+    width: 100%;
     grid-template-columns: .3fr 1fr .3fr;
     grid-template-rows: .7fr .1fr .1fr .4fr;
     row-gap: .2rem;

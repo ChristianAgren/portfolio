@@ -6,3 +6,16 @@
     width: 52rem;
     height: 40%;
 }
+
+.projects_carousel {
+    top: 6%;
+
+    width: 55rem;
+    height: 80%
+}
+
+.projects_card_container {
+    height: 95%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+}
