@@ -10,7 +10,7 @@
     ". . . . ."
     ". title title title ."
     ". . profile . ."
-    ". . abt . ."
+    ". . . . ."
     ". . . . ."
     ;
 }
@@ -41,7 +41,7 @@
     transform: translateX(-50%);
     
     width: 16rem;
-    height: 55%;
+    height: 60%;
 }
 
 .about {
@@ -80,6 +80,7 @@
     background-color: var(--offwhite);
     color: var(--primary-color);
     border-radius: 1rem;
+    box-shadow: var(--secondary-color) 0 4px 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;

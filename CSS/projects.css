@@ -20,6 +20,7 @@
 
 .projects_desc {
     grid-area: desc;
+    z-index: 1;
 }
 
 /* OTHER */
@@ -30,24 +31,25 @@
 
 .projects_carousel {
     position: absolute;
-    top: 13%;
+    top: 14%;
     left: 50%;
     transform: translateX(-50%);
 
     overflow: hidden;
     width: 17rem;
-    height: 70%;
+    height: 75%;
 }
 
 .projects_card_container {
     position: absolute;
-    top: 17px;
+    top: 15px;
     left: 0;
     
     width: 100%;
     height: 100%;
 
     max-width: 55rem;
+    max-height: 30rem;
 
     column-gap: 2rem;
     
@@ -70,6 +72,7 @@
     min-width: 17rem;
 
     background-color: var(--offwhite);
+    box-shadow: var(--secondary-color) 0 4px 0 0;
     color: var(--primary-color);
     border-radius: 1rem;
 }
