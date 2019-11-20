@@ -1,3 +1,12 @@
+
+/** Each object in array defines a project card and the information needed for building it
+ * @typedef {[{name: String, title: String, desc: String, bdytxt: String, githubLink: String}]} Projects
+ */
+
+
+/**
+ * @type {Projects} Defines projects
+ */
 const projects = [{
         name: "helloworld",
         title: "Hello World",
@@ -21,6 +30,9 @@ const projects = [{
     }
 ];
 
+/**
+ * Creates necessary nodes for project cards
+ */
 function createDOMProjectElements() {
     
     projects.forEach(project => {
@@ -29,6 +41,7 @@ function createDOMProjectElements() {
                 newCardDesc = document.createElement('div'),
                 newCardBodyText = document.createElement('div'),
                 newCardLink = document.createElement('div');
+                
 
             buildNewCardStructure(newCardDiv, newCardTitle, newCardDesc, newCardBodyText, newCardLink)
             addContentToTitle(project, newCardTitle)
@@ -37,20 +50,25 @@ function createDOMProjectElements() {
             addContentToLink(newCardLink)
             addClasslistToProjectNodes(newCardDiv, newCardTitle, newCardDesc, newCardBodyText, newCardLink, project)
             addLinkToProject(project)
-        
-        
-        
     });
 }
 
+/**
+ * Creates child and textcontent for link node
+ * @param {HTMLDivElement} link The created link node
+ */
 function addContentToLink(link) {
-    const   linkContent = document.createTextNode('Link to github!'),
+    const   linkContent = document.createTextNode('Find it on github!'),
             linkNode = document.createElement('a');
 
-    buildIndividualNodesWithContent(link, linkNode, linkContent)
-            
+    buildIndividualNodesWithContent(link, linkNode, linkContent)         
 }
 
+/**
+ * Creates child and textcontent for link node
+ * @param {Object} project The project for the current iteration of the build loop
+ * @param {HTMLDivElement} desc The created desc node
+ */
 function addContentToDesc(project, desc) {
     const   descContent = document.createTextNode(project.desc),
             descNode = document.createElement('p');
@@ -58,6 +76,11 @@ function addContentToDesc(project, desc) {
     buildIndividualNodesWithContent(desc, descNode, descContent)
 }
 
+/**
+ * Creates child and textcontent for title node
+ * @param {Object} project The project for the current iteration of the build loop
+ * @param {HTMLDivElement} title The created title node
+ */
 function addContentToTitle(project, title) {
     const   titleContent = document.createTextNode(project.title),
             titleNode = document.createElement('h3');
@@ -65,16 +88,36 @@ function addContentToTitle(project, title) {
     buildIndividualNodesWithContent(title, titleNode, titleContent)
 }
 
-function buildIndividualNodesWithContent(parent, node, content) {
-    node.append(content)
-    parent.append(node)
-}
-
+/**
+ * Creates textcontent for body node
+ * @param {Object} project The project for the current iteration of the build loop
+ * @param {HTMLDivElement} body The created body node
+ */
 function addContentToBody(project, body) {
     const   bodyContent = document.createTextNode(project.bdytxt)
     body.append(bodyContent)
 }
 
+/**
+ * Builds the DOM structure for individual nodes
+ * @param {HTMLDivElement} parent The parent element
+ * @param {HTMLDivElement} child  The child element
+ * @param {Text} content The content that is to be attached to the child
+ */
+function buildIndividualNodesWithContent(parent, child, content) {
+    child.append(content)
+    parent.append(child)
+}
+
+
+/**
+ * Finalizes structure for card and builds it in the DOM
+ * @param {HTMLDivElement} parent The parent element
+ * @param {HTMLDivElement} title The title node
+ * @param {HTMLDivElement} desc The desc node
+ * @param {HTMLDivElement} body The bodytext node
+ * @param {HTMLDivElement} link The link node
+ */
 function buildNewCardStructure(parent, title, desc, body, link) {
     const   projectContainerDiv = document.querySelector('div.projects_card_container'),
             buildArray = [title, desc, body, link];
@@ -86,6 +129,15 @@ function buildNewCardStructure(parent, title, desc, body, link) {
     });   
 }
 
+/**
+ * Adds necessary classes to the card nodes
+ * @param {HTMLDivElement} parent The parent element
+ * @param {HTMLDivElement} title The title node
+ * @param {HTMLDivElement} desc The desc node
+ * @param {HTMLDivElement} body The bodytext node
+ * @param {HTMLDivElement} link The link node
+ * @param {Object} project The project for the current iteration of the build loop
+ */
 function addClasslistToProjectNodes(parent, title, desc, body, link, project) {
     parent.classList.add('project_card')
     title.classList.add('project_card_title')
@@ -95,6 +147,10 @@ function addClasslistToProjectNodes(parent, title, desc, body, link, project) {
     link.classList.add(project.name)
 }
 
+/**
+ * Adds href link to <a> node for linking
+ * @param {Object} project The project for the current iteration of the build loop
+ */
 function addLinkToProject(project) {
     const   addLink = document.querySelector('.' + project.name + ' a');
     

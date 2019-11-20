@@ -71,7 +71,6 @@ function gotoNextParagraph(event) {
     let     pageIndex = 0;
     
     if (event.target.innerText === "more_horiz") {
-        console.log(getContainers[0]);
         getContainers[0].scrollIntoView({behavior:'smooth'})  //Bad IOSmobile support, fix in future
     }
     else {
