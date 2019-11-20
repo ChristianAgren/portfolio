@@ -5,9 +5,10 @@
 
     height: 95vh;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: .1fr .1fr 1fr 1fr ;
+    grid-template-rows: .1fr .1fr .1fr 1.2fr 1.2fr ;
     row-gap: .2rem;
     grid-template-areas: 
+    ". . . . ."
     ". title title title ."
     ". desc desc desc ."
     ". . . . ."
@@ -24,12 +25,12 @@
 /* OTHER */
 
 .projects_desc a {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .projects_carousel {
     position: absolute;
-    top: 10%;
+    top: 13%;
     left: 50%;
     transform: translateX(-50%);
 
