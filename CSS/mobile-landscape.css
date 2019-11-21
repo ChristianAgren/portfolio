@@ -1,0 +1,74 @@
+.about_container {
+    grid-template-columns: .1fr .3fr .6fr .3fr .1fr;
+    grid-template-rows: .1fr .1fr .3fr .6fr .1fr .4fr;
+    grid-template-areas: 
+    ". . . . ."
+    ". title title title ."
+    ". . . . ."
+    ". . . profile ."
+    ". . . . ."
+    ". . . . ."
+    ;
+}
+
+.profile {
+    width: 25vw;
+    height: 25vw;
+}
+
+.endicon {
+    display: none;
+}
+
+.carousel {
+    top: 50%;
+    transform: translateY(-38%);
+    left: 10%;
+    min-height: 82%;
+    max-width: 16rem;
+}
+
+.about {
+    height: 98%;
+    overflow-y: hidden;
+}
+
+.projects_container {
+    grid-template-rows:.2fr .2fr 1.3fr 1.3fr ;
+    grid-template-areas: 
+    ". title title title ."
+    ". desc desc desc ."
+    ". . . . ."
+    ". . . . .";
+}
+
+.medias_container {
+    grid-template-rows: .3fr .5fr 1fr .1fr .1fr .1fr 1fr;
+    grid-template-areas: 
+    ". . . . . . ."
+    ". . . . . . ."
+    ". conttwo . contone . contthree ."
+    ". . . . . . ."
+    ". emaildesc emaildesc emaildesc emaildesc emaildesc ."
+    ". email email email email email ."
+    ". . . . . . ."
+    ;
+}
+
+.top_line {
+    display: none;
+}
+
+.left_line {
+    display: none;
+}
+
+.right_line {
+    display: none;
+}
+
+.mid_line {
+    display: none;
+}
+
+
