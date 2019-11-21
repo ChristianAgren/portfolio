@@ -17,7 +17,7 @@ function declareEventListeners() {
             aboutScrollButtons = document.querySelectorAll('div.scroll');
                 
     aboutScrollButtons.forEach(button => {
-        button.addEventListener('click', gotoNextAboutSection)
+        button.addEventListener('click', findTargetForScrollButton)
     });
     
     mainScrollButtons.forEach(button => {
@@ -26,40 +26,40 @@ function declareEventListeners() {
 }
 
 /**
- * Scrolls between character cards in about section
+ * Finds the container that needs to be scrolled
  * @param {MouseEvent} event Triggers when user presses scroll buttons in about
  */
-function gotoNextAboutSection(event) {
-    const   aboutDiv = document.querySelector('div.about');
+function findTargetForScrollButton(event) {
+    const   sliderDivs = document.querySelectorAll('div.slider');
+
+    sliderDivs.forEach(div => {
+        target = div.contains(event.target)
+        if (target) {
+            let scrollInitialIndex = Math.floor(div.scrollLeft / 288);
+            performScrollinContainer(event, div, scrollInitialIndex)
+        }
+    }); 
+}
+
+/**
+ * Scrolls between cards in targeted container
+ * @param {MouseEvent} event Triggers when user presses scrollbuttons
+ * @param {Element} targetDiv The targeted div that needs to be scrolled
+ * @param {Number} scrollIndex Positional index of card slider
+ */
+function performScrollinContainer(event, targetDiv, scrollIndex) {
     
     if (event.target.innerText === "keyboard_arrow_right") {
-        if (aboutDiv.clientWidth === 256) {
-            if (aboutDiv.scrollLeft < 288) {
-                aboutDiv.scrollLeft = 0
-            }
-            else {
-                aboutDiv.scrollLeft = 288
-            }
-            aboutDiv.scrollLeft += 288
-        }
-        else {
-            aboutDiv.scrollLeft += aboutDiv.clientWidth
-        }
+        targetDiv.scrollLeft = (scrollIndex + 1) * 288
+        
+    }
+    else if ((event.target.innerText === "keyboard_arrow_left") && (targetDiv.scrollLeft / 288 === scrollIndex)) {
+        targetDiv.scrollLeft = (scrollIndex-1) * 288
+        
     }
     else {
-        if (aboutDiv.clientWidth === 256) {
-            if (aboutDiv.scrollLeft > 288 && aboutDiv.scrollLeft < 577) {
-                aboutDiv.scrollLeft = 577
-            }
-            else {
-                aboutDiv.scrollLeft = 288
-            }
-            aboutDiv.scrollLeft -= 288
-        }
-        else {
-            aboutDiv.scrollLeft -= aboutDiv.clientWidth
-        }
-    }
+        targetDiv.scrollLeft = (scrollIndex) * 288
+    }  
 }
 
 /**
@@ -98,7 +98,7 @@ function rotateImages() {
 
 /**
  * Adds animation to classlist
- * @param {Object} div Node that get added animationclass
+ * @param {Element} div Node that get added animationclass
  * @param {Number} value Randomized value that determines rotation
  */
 function addRotateAnimation(div, value) {

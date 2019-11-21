@@ -34,9 +34,7 @@
     top: 14%;
     left: 50%;
     transform: translateX(-50%);
-
-    overflow: hidden;
-    width: 17rem;
+    width: 16rem;
     height: 75%;
 }
 
@@ -68,8 +66,8 @@
     height: 90%;
     width: 100%;
 
-    max-width: 17rem;
-    min-width: 17rem;
+    max-width: 16rem;
+    min-width: 16rem;
 
     background-color: var(--offwhite);
     box-shadow: var(--secondary-color) 0 4px 0 0;
@@ -98,4 +96,9 @@
 
 .project_card_link a {
     color: var(--primary-color)
+}
+
+.project_scroll_buttons {
+    position: fixed;
+    top: 40%;
 }

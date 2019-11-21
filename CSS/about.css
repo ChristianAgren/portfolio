@@ -39,7 +39,6 @@
     top: 33%;
     left: 50%;
     transform: translateX(-50%);
-    
     width: 16rem;
     height: 60%;
 }
@@ -102,21 +101,3 @@
     padding: 0 0 .4rem 1rem;
 }
 
-.scroll {
-    position: absolute;
-    top: 50%;
-}
-
-.scroll > i.material-icons {
-    z-index: 3;
-    font-size: 3rem;
-    text-shadow: var(--secondary-color) 0 0 4px;
-}
-
-.left {
-    left: 1%;
-}
-
-.right {
-    right: 1%
-}
