@@ -18,6 +18,7 @@
 /* GRID-ITEMS */
 
 .profile {
+    box-sizing: content-box;
     grid-area: profile;
     z-index: 2;
     justify-self: center;
@@ -29,7 +30,8 @@
     min-height: 9rem;
     border-radius: 50%;
     border: .5rem solid var(--offwhite-faded);
-    background: url(../res/profile.jpg) center center no-repeat / 115%;
+    background: url(../res/profile.jpg) 50% 50% no-repeat;
+    background-size: 115%;
 }
 
 /* OTHER */

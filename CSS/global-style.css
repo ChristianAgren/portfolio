@@ -166,7 +166,7 @@ span {
 .land {
     width: 300%;
     height: 100%;
-    background: url(../res/earth-vector-bright.svg) 0 0 repeat / 50%;
+    background: url(../res/earth-vector-bright.svg) 0 0 repeat;
 }
 
 .atmosphere { 
